@@ -1,78 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body {
-            margin: 0;
-            heigth: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: black;
-            overflow: hidden;
-        }
-        .loader, .loader span {
-            width: 10em;
-            height: 10em;
-            border: 0.25em solid white;
-            font-size: 10px;
-            border-radius: 1em;
-            position: absolute;
-            mix-blend-mode: screen;
-        }
-        .loader {
-            background-color: gold;
-            animation: rotating 2s linear
-                infinite;
-        }
-        @keyframes rotating {
-          to {
-            transform: rotate(1turn);
-          }
-        }
-        .loader span {
-            animation: de-rotating 4s
-                linear infinite;
-        }
-        @keyframes de-rotating {
-          from, to {
-                tranform: rotate(0deg)
-                    scale(0.5);
-          }
-            50% {
-                transform: rotate(-180deg)
-                    scale(1.2);
-          }
-        }
-        .loader span:nth-child(1) {
-            top: 5em;
-            left: 5em;
-            background-color: dodgerblue;
-        }
-        .loader span:nth-child(2) {
-            top: -5em;
-            left: 5em;
-            background-color: hotpink; 
-        }
-        .loader span:nth-child(3) {
-            top: 5em;
-            left: -5em;
-            background-color:
-             mediumpurple;
-        }
-        .loader span:nth-child(4) {
-            top: -5em;
-            left: -5em;
-            background-color: limegreen;
-        }
-     </style>
-    </head>
-    <body>
-        <div class="loader">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-       </body>
-       </html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login / Sign Up Form</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form" id="login">
+            <h1 class="form__title">Login</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Username or email">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <a href="#" class="form__link">Forgot your password?</a>
+            </p>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+            </p>
+        </form>
+        <form class="form form--hidden" id="createAccount">
+            <h1 class="form__title">Create Account</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Email Address">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Confirm password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
+            </p>
+        </form>
+    </div>
+    <script src="./src/main.js"></script>
+</body>
+</html>
