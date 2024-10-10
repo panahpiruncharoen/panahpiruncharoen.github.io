@@ -4,8 +4,8 @@ $("#Submit").click(() => {
     if (guess > 10 || guess < 1) {
         alert("the nummber should be between 1 and 10")
     } else {
-        alert("correct")
         if (guess == number) {
+            alert("correct")
         } else {
             alert("Incorrect the number is: " + number)
         }   
